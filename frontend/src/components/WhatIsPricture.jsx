@@ -15,8 +15,10 @@ export default function WhatIsPricture() {
   };
   const handleConnectBE = async () => {
     try {
-      const response = await axios.get("/");
-      console.log(response);
+      const response = await axios.get(
+        "https://priceture-test-backend.vercel.app/"
+      );
+      console.log("response from server GET", response);
     } catch (err) {
       console.log("connect with ER error", err);
     }
