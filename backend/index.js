@@ -1,10 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
 app.use(
   cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
+    origin: ["priceture-test-backend.vercel.app"],
     methods: ["GET"],
     credentials: true,
   })
