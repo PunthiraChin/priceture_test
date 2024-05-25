@@ -18,7 +18,7 @@ export default function WhatIsPricture() {
       const response = await axios.get(
         "https://priceture-test-backend.vercel.app/"
       );
-      console.log("response from server GET", response);
+      console.log("response from server GET", response.assetPrice);
     } catch (err) {
       console.log("connect with ER error", err);
     }

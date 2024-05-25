@@ -24,7 +24,7 @@ app.get("/", async (req, res) => {
   );
   //   console.log(response.data[selectedAsset].usd);
   const assetPrice = response.data[selectedAsset].usd;
-  //   console.log(assetPrice);
+  console.log("Requested asset price", assetPrice);
   res.json({ assetPrice });
 });
 
