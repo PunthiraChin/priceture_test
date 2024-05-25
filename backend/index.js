@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://priceture-test-zqag.vercel.app/"],
+    origin: ["https://priceture-test-zqag.vercel.app"],
     methods: ["GET"],
     credentials: true,
   })
