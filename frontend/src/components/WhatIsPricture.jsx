@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import { AppContext } from "../context/AppContext.jsx";
 import { useNavigate } from "react-router-dom";
 import monalisaGif from "../assets/monalisa.gif";
+import axios from "axios";
 export default function WhatIsPricture() {
   const { pageCount, setPageCount } = useContext(AppContext);
   const navigate = useNavigate();
@@ -11,6 +12,14 @@ export default function WhatIsPricture() {
     if (pageCount === 0) {
       navigate("/register");
     } else setPageCount(0);
+  };
+  const handleConnectBE = async () => {
+    try {
+      const response = await axios.get("/");
+      console.log(response);
+    } catch (err) {
+      console.log("connect with ER error", err);
+    }
   };
   return (
     <div id="whatispriceture" className="homepageCard">
@@ -32,6 +41,7 @@ export default function WhatIsPricture() {
           >
             GET STARTED
           </Button>
+          <button onClick={handleConnectBE}>Talk to backend</button>
         </div>
         <img className="w-1/3 grow" src={monalisaGif} alt="monalisa image" />
       </div>
