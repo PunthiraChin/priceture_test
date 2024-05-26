@@ -6,6 +6,10 @@ require("dotenv").config();
 
 const app = express();
 let COINGECKO_API_KEY = process.env.COINGECKO_API_KEY;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 6000;
+}
 
 app.use(
   cors({
@@ -28,6 +32,6 @@ app.get("/", async (req, res) => {
   res.json({ assetPrice });
 });
 
-app.listen(3000, () => console.log("Server ready on port 3000."));
+app.listen(port, () => console.log(`Server ready on port ${port}`));
 
 module.exports = app;
