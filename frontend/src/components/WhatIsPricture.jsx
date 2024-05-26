@@ -15,10 +15,13 @@ export default function WhatIsPricture() {
   };
   const handleConnectBE = async () => {
     try {
-      const response = await axios.get(
-        "https://priceture-test-backend.vercel.app/"
-      );
-      console.log("response from server GET", response.assetPrice);
+      // const response = await axios.get(
+      //   "https://priceture-test-backend.vercel.app/"
+      // );
+      const response = await axios.get("http://localhost:8888/", {
+        crossdomain: true,
+      });
+      console.log("AssetPrice", response.data.assetPrice);
     } catch (err) {
       console.log("connect with ER error", err);
     }
